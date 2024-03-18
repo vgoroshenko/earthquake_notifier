@@ -94,7 +94,7 @@ def myprocessing(message):
                 # Alarm if my_distance < 400
                 if my_distance <= 400:
                     for i in range(7):
-                        send_shake_message('‼️‼️‼️\n' + msg.format(**shake_info) + ' DISTANCE: ' + str(my_distance), False)
+                        send_shake_message('‼️‼️‼️\n' + msg.format(**shake_info) + '\nDISTANCE: ' + str(my_distance), False)
 
             tmp_info.update(shake_info)
 
