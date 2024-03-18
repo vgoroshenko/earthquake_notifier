@@ -67,7 +67,7 @@ def myprocessing(message):
         shake_info = data['data']['properties']
         shake_info['action'] = data['action']
         shake_location = (shake_info['lat'], shake_info['lon'])
-        my_distance = distance.distance(shake_location, current_location).km
+        my_distance = int(distance.distance(shake_location, current_location).km)
         shake_info['time'] = re.sub(r'T', ' ', re.sub(r'\..*$', '', shake_info['time']))
         shake_info['cur_time'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         shake_info['time'] = (datetime.strptime(shake_info['time'], "%Y-%m-%d %H:%M:%S") + timedelta(hours=6)).strftime(
